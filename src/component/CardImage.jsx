@@ -11,11 +11,12 @@ const CardImage = (props) => {
     console.log(data, "adakah data");
   };
 
-  const { album, name, raw, onCheckbox } = props.item;
+  const { album, name, raw } = props.item;
+  const onCheckbox = props.onCheckbox;
   return (
     <div className="card-image">
       <Checkbox
-        onChange={onCheckbox}
+        onChange={(e) => onCheckbox(e)}
         name={name}
         raw={raw}
         album={album}
