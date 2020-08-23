@@ -10,7 +10,7 @@ import { putPhotos, delPhotos } from "../api/index";
 import Modal from "react-modal";
 import "./ButtonUpload.scss";
 
-const ButtonUpload = () => {
+const ButtonUpload = (props) => {
   const [modalButton, setModalButton] = useState(false);
   const [album, setAlbum] = useState("");
   const [files, setFiles] = useState([]);
@@ -20,15 +20,15 @@ const ButtonUpload = () => {
     fd.append("album", album);
     files.map((file) => fd.append("documents", file));
     putPhotos(fd)
-      .then((res) => console.log(res))
+      .then((res) => alert("success upload photo"))
       .catch((err) => console.log(err));
     setModalButton(false);
   };
 
-  const deletePhotos = () => {
-    let array = [];
-    delPhotos(array);
-  };
+  //   const deletePhotos = () => {
+  //     let array = [];
+  //     delPhotos(array);
+  //   };
 
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
@@ -59,11 +59,7 @@ const ButtonUpload = () => {
     <div className="button-upload">
       <h1 style={{ fontWeight: "bold" }}>Photos</h1>
       <div className="del">
-        <Button
-          danger
-          style={{ border: "none" }}
-          onClick={() => deletePhotos()}
-        >
+        <Button danger style={{ border: "none" }} onClick={props.onDelete}>
           <DeleteOutlined />
         </Button>
       </div>

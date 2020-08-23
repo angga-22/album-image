@@ -51,7 +51,7 @@ export const delPhoto = (Album, FileName) => {
 }
 
 
-export const delPhotos = (album, documents) => {
+export const delPhotos = data => {
     return axios({
         method: 'DELETE',
         headers: {
@@ -59,9 +59,6 @@ export const delPhotos = (album, documents) => {
             'Content-Type': 'application/json'
         },
         url: `${baseUrl}/photos`,
-        data: {
-            album: album,
-            documents: documents
-        }
+        data: data
     })
 }
