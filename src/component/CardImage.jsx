@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Checkbox } from "antd";
 import "./CardImage.scss";
 
 const CardImage = (props) => {
-  const [check, setCheck] = useState([]);
-
-  const checkBox = (e) => {
-    setCheck(e.target.value);
-    var data = { album: e.target.album, documents: e.target.name };
-    console.log(data, "adakah data");
-  };
-
   const { album, name, raw } = props.item;
   const onCheckbox = props.onCheckbox;
   return (

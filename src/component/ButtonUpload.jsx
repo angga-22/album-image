@@ -6,7 +6,7 @@ import {
   UploadOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
-import { putPhotos, delPhotos } from "../api/index";
+import { putPhotos } from "../api/index";
 import Modal from "react-modal";
 import "./ButtonUpload.scss";
 
