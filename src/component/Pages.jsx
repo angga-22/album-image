@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Pages.scss";
 import CardImage from "./CardImage";
 import ButtonUpload from "./ButtonUpload";
-import { Pagination } from "antd";
+import { Pagination } from 'antd';
 import { postPhotos, delPhotos } from "../api/index";
 
 const Pages = () => {
@@ -84,13 +84,13 @@ const Pages = () => {
 
   return (
     <div>
-      <Pagination defaultCurrent={1} total={20} />
       <ButtonUpload onDelete={onDelete} />
       <div className="pages">
         {imageAppear.map((item, i) => (
           <CardImage item={item} key={i} onCheckbox={(e) => onCheckbox(e)} />
         ))}
       </div>
+      <Pagination defaultCurrent={1} total={20} />
     </div>
   );
 };
