@@ -1,4 +1,6 @@
 A simple app for image gallery. you can save your images within categories that you want. 
+click link below for trying this app. https://image-gallery-angga.netlify.app/ 
+before that, you should run the server in your local repository. https://github.com/binodnp/album
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
